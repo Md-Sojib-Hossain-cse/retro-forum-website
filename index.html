@@ -47,7 +47,7 @@
                                 d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
                         </svg>
                     </button>
-                    <button title="Bookmark" class="btn btn-circle bg-gray-100 outline-1 outline-gray-500 ">
+                    <button title="Flag" class="btn btn-circle bg-gray-100 outline-1 outline-gray-500 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -123,7 +123,7 @@
                 <!-- authors posts  -->
                 <div
                     class="col-span-1 md:col-span-3 lg:col-span-2 flex flex-col justify-start items-center gap-2 md:gap-4 lg:gap-5 xl:gap-6">
-                    <div class="bg-[#F3F3F5] p-6 lg:p-8 xl:p-10 rounded-3xl flex gap-4 lg:gap-5 xl:gap-6">
+                    <div class="bg-[#F3F3F5] p-3 md:p6 lg:p-8 xl:p-10 rounded-3xl flex gap-4 lg:gap-5 xl:gap-6">
                         <!-- author image  -->
                         <div class="indicator">
                             <span class="indicator-item badge bg-green-700"></span>
@@ -183,36 +183,51 @@
                     </div>
                 </div>
                 <!-- Users read list-->
-                <div class="col-span-1 md:col-span-2 lg:col-span-1 p-5 lg:p-6 rounded-3xl bg-[#F3F3F5]">
-                    <div class="flex justify-between">
-                        <h4 class="text-[#12132D] text-xl font-bold leading-6">Title</h4>
-                        <div class="flex justify-between gap-2">
-                            <p class="text-green-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                            </p>
-                            <p class="text-[#12132D99] font-inter leading-5">Mark as read (<span>0</span>)</p>
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <div class="p-5 lg:p-6 rounded-3xl bg-[#F3F3F5]">
+                        <div class="flex justify-between">
+                            <h4 class="text-[#12132D] text-xl font-bold leading-6">Title</h4>
+                            <div class="flex justify-between gap-2">
+                                <p class="text-green-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </p>
+                                <p class="text-[#12132D99] font-inter leading-5">Mark as read (<span>0</span>)</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- lists -->
-                    <div class="mt-5 lg:mt-6">
-                        <div class="flex bg-white p-4 rounded-2xl">
-                            <h5 class="flex-1 text-[#12132D] font-semibold leading-6">10 Kids Unaware of Their Halloween Costume</h5>
-                            <div class="flex gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                </svg>
-                                <span>0</span>
+                        <!-- lists -->
+                        <div class="mt-5 lg:mt-6">
+                            <div class="flex bg-white p-4 rounded-2xl">
+                                <h5 class="flex-1 text-[#12132D] font-semibold leading-6">10 Kids Unaware of Their Halloween Costume</h5>
+                                <div class="flex gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                    <span>0</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- join our forum section -->
+        <section class="container mx-auto mt-8 md:mt-16 lg:mt-24 bg-[#12132D] rounded-[32px] flex flex-col-reverse md:flex-row justify-between gap-6 text-center md:text-left py-4 md:py-0">
+            <div class="py-4 md:py-8 lg:py-16 xl:py-24 pl-3 md:pl-7 lg:pl-14 xl:pl-20">
+                <h2 class="text-white text-4xl font-black leading-[50px]">Join Our Forum</h2>
+                <p class="text-[#FFFFFFCC] text-lg leading-7 mt-4">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                <button
+                    class="btn border-[1.5px] border-solid border-transparent bg-violet-500 text-white text-xl font-bold px-10 rounded-full mt-6 lg:mt-8">Registered Now</button>
+            </div>
+            <div class="flex items-center md:items-end pl-4 pr-5 justify-center">
+                <img src="./images/joinforum.png" alt="join Forum" class=" w-3/4 md:w-full h-auto">
             </div>
         </section>
     </main>
