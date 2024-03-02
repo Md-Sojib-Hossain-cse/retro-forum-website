@@ -16,9 +16,11 @@
 </head>
 
 <body class="font-mulish">
+    <!-- header -->
     <header>
         <!-- Navigation bar  -->
-        <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-5 mt-4 md:mt-8 lg:mt-12">
+        <nav
+            class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-5 mt-4 md:mt-8 lg:mt-12">
             <img src="./images/logo.png" alt="logo">
             <!-- buttons -->
             <div class="flex justify-center items-center gap-3 md:gap-5">
@@ -53,34 +55,86 @@
                         </svg>
                     </button>
                 </div>
-                <button class="btn border-[1.5px] border-solid border-transparent bg-violet-500 text-white text-xl font-bold px-10 rounded-full">Sign
+                <button
+                    class="btn border-[1.5px] border-solid border-transparent bg-violet-500 text-white text-xl font-bold px-10 rounded-full">Sign
                     In</button>
             </div>
         </nav>
 
         <!-- Banner Section  -->
         <section class="container mx-auto mt-4 md:mt-8 lg:mt-12">
-            <div class="bg-[url(images/bgbanner.png)] bg-cover bg-no-repeat bg-[#12132D] p-4 md:p-10 lg:p-16 xl:p-24 rounded-[32px] flex justify-center lg:justify-between items-center">
+            <div
+                class="bg-[url(images/bgbanner.png)] bg-cover bg-no-repeat bg-[#12132D] p-4 md:p-10 lg:p-16 xl:p-24 rounded-[32px] flex justify-center lg:justify-between items-center">
                 <!-- left side  -->
                 <div>
-                    <h2 class="text-6xl font-[900] leading-[86px] text-center lg:text-left text-[#FFFFFF] w-full lg:w-[550px]">Welcome to the <span class="bg-gradient-to-r from-[#797DFCFF] to-[#797DFC00] text-transparent bg-clip-text">ReTro</span> Forum</h2>
-                    <p class="text-xl font-medium text-center lg:text-left text-[#FFFFFFCC] leading-9 w-full lg:w-[455px] mx-auto lg:mx-0 mt-5">Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <div class="bg-white mt-8 w-3/4 lg:w-[400px] mx-auto lg:mx-0 rounded-full flex justify-between items-center">
-                        <input type="text" id="" placeholder="Search here anything" class="text-[#03071280] font-medium leading-5 pl-5 h-full w-full rounded-full outline-none py-4">
-                        <button class="btn border-[1.5px] border-solid border-transparent bg-violet-500 text-white text-xl font-bold px-10 rounded-full my-1.5 mr-1">Search</button>
+                    <h2
+                        class="text-6xl font-black leading-[86px] text-center lg:text-left text-[#FFFFFF] w-full lg:w-[550px]">
+                        Welcome to the <span
+                            class="bg-gradient-to-r from-[#797DFCFF] to-[#797DFC00] text-transparent bg-clip-text">ReTro</span>
+                        Forum</h2>
+                    <p
+                        class="text-xl font-medium text-center lg:text-left text-[#FFFFFFCC] leading-9 w-full lg:w-[455px] mx-auto lg:mx-0 mt-5">
+                        Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <div
+                        class="bg-white mt-8 w-3/4 lg:w-[400px] mx-auto lg:mx-0 rounded-full flex justify-between items-center">
+                        <input type="text" id="" placeholder="Search here anything"
+                            class="text-[#03071280] font-medium leading-5 pl-5 h-full w-full rounded-full outline-none py-4">
+                        <button
+                            class="btn border-[1.5px] border-solid border-transparent bg-violet-500 text-white text-xl font-bold px-10 rounded-full my-1.5 mr-1">Search</button>
                     </div>
                 </div>
                 <!-- right side  -->
-                <div class="text-[#12132DCC] text-2xl font-medium leading-7 space-y-6 bg-white p-12 rounded-[32px] hidden lg:block">
-                    <div class="flex justify-between items-center gap-14"><p>Registration Users</p><p>01</p></div>
-                    <div class="flex justify-between items-center gap-14"><p>Forum</p><p>05</p></div>
-                    <div class="flex justify-between items-center gap-14"><p>Topics</p><p>01</p></div>
-                    <div class="flex justify-between items-center gap-14"><p>Replies</p><p>01</p></div>
+                <div
+                    class="text-[#12132DCC] text-2xl font-medium leading-7 space-y-6 bg-white p-12 rounded-[32px] hidden lg:block">
+                    <div class="flex justify-between items-center gap-14">
+                        <p>Registration Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between items-center gap-14">
+                        <p>Forum</p>
+                        <p>05</p>
+                    </div>
+                    <div class="flex justify-between items-center gap-14">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between items-center gap-14">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
                 </div>
             </div>
         </section>
     </header>
-    <main></main>
+    <!-- main -->
+    <main>
+        <!-- lets discuss section -->
+        <section class="container mx-auto mt-8 md:mt-16 lg:mt-24">
+            <!-- title and description  -->
+            <div class="flex flex-col justify-center items-center">
+                <h3 class="text-[#12132D] text-4xl font-black">Let's Discuss</h3>
+                <p class="w-10/12 md:w-3/4 lg:w-[691px] mt-6 text-center text-[#12132D99] font-inter text-lg">Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                    features allow for a streamlined .</p>
+            </div>
+            <!-- discussion box -->
+            <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-5 xl:gap-6 mt-4 md:mt-8 lg:mt-12">
+                <!-- authors posts  -->
+                <div class="col-span-1 md:col-span-3 lg:col-span-2 flex flex-col justify-start items-center gap-2 md:gap-4 lg:gap-5 xl:gap-6">
+                    <div class="bg-[#F3F3F5] p-2 md:p-4lg:p-8 xl:p-10 rounded-3xl flex gap-2 md:gap-4 lg:gap-5 xl:gap-6">
+                        <!-- author image  -->
+                        <div class="indicator">
+                            <span class="indicator-item badge bg-green-700"></span> 
+                            <div class="grid w-[72px] h-[72px] bg-base-300 place-items-center">content</div>
+                        </div>
+                        <!-- post details -->
+                        <div></div>
+                    </div>
+                </div>
+                <!-- Users read list-->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1"></div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
 </body>
 
