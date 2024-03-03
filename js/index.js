@@ -1,3 +1,4 @@
+// Default Dynamic posts 
 const defaultPosts = async () =>{
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
     const data = await res.json();
@@ -5,7 +6,6 @@ const defaultPosts = async () =>{
     const postsContainer = document.getElementById('authors-posts-container');
     posts.forEach(post => {
         const div = document.createElement('div');
-        // console.log(post.title)
         div.classList = `bg-[#F3F3F5] p-3 md:p6 lg:p-8 xl:p-10 rounded-3xl flex w-full gap-4 lg:gap-5 xl:gap-6`;
         div.innerHTML= `
                         <div class="indicator">
@@ -52,7 +52,7 @@ const defaultPosts = async () =>{
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="bg-[#10B981] text-white p-1 rounded-full">
+                                    <div class="bg-[#10B981] text-white p-1 rounded-full" onclick="markAsRead( '${(post?.title).replace("'" , "@")}' , '${post?.view_count}')">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -64,7 +64,36 @@ const defaultPosts = async () =>{
                         </div>
         `
         postsContainer.appendChild(div);
-        console.log();
     });
 }
 defaultPosts();
+
+//mark as read 
+const markAsRead = (postTitle , viewCount) =>{
+    //dynamically updating total Reading
+    const markReadTotalText = document.getElementById('markReadTotal');
+    const markReadTotalValue = parseInt(markReadTotalText.innerText);
+    const markReadNewTotal = markReadTotalValue + 1;
+    markReadTotalText.innerText = markReadNewTotal;
+
+    //dynamically adding reading list
+    const readListContainer = document.getElementById('read-list-container');
+    const div = document.createElement('div');
+    div.classList = `mt-5 lg:mt-6`;
+    div.innerHTML = `
+    <div class="flex items-center gap-2 bg-white p-4 rounded-2xl">
+        <h5 class="flex-1 text-[#12132D] font-semibold leading-6">${postTitle.replace("@" , "'")}</h5>
+        <div class="flex gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <span>${viewCount}</span>
+        </div>
+    </div>
+    `;
+    readListContainer.appendChild(div);
+}
