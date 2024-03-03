@@ -68,6 +68,45 @@ const defaultPosts = async () =>{
 }
 defaultPosts();
 
+const latestPosts = async () =>{
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await res.json();
+    const postCardsContainer = document.getElementById('post-cards-container');
+    data.forEach(post => {
+        console.log(post?.author?.posted_date)
+        const div = document.createElement('div');
+        div.classList = `card w-full bg-white border-[1px] border-[#12132D26]`;
+        div.innerHTML = `
+        <figure class="px-3 md:px-5 lg:px-8 xl:px-10 pt-3 md:pt-5 lg:pt-8 xl:pt-10">
+            <img src="${post?.cover_image}" alt="post cover" class="w-full bg-[#12132D0D] rounded-2xl">
+        </figure>
+        <div class="card-body items-left text-left">
+            <div class="flex gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                </svg>
+                <p class="text-[#12132D99] leading-5">${post?.author?.posted_date}</p>
+            </div>
+            <h4 class="text-[#12132D] text-lg font-extrabold leading-7 mt-2 md:mt-3">${post?.title}</h4>
+            <p class="text-[#12132D99] leading-6 mt-2 md:mt-3">${post?.description}</p>
+            <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mt-3 md:mt-4 ">
+                <div class="h-11 w-11 rounded-full bg-gray-200">
+                    <img src="${post?.profile_image}" alt="author_photo" class="rounded-full">
+                </div>
+                <div>
+                    <h4 class="text-[#12132D] font-bold leading-5">${post?.author?.name}</h4>
+                    <p class="text-[#12132D99] text-sm leading-4 mt-1">${post?.author?.designation}</p>
+                </div>
+            </div>
+        </div>
+        `;
+        postCardsContainer.appendChild(div);
+    })
+}
+latestPosts();
+
 //mark as read 
 const markAsRead = (postTitle , viewCount) =>{
     //dynamically updating total Reading
