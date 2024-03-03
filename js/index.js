@@ -9,7 +9,7 @@ const defaultPosts = async () =>{
         div.classList = `bg-[#F3F3F5] p-3 md:p6 lg:p-8 xl:p-10 rounded-3xl flex w-full gap-4 lg:gap-5 xl:gap-6`;
         div.innerHTML= `
                         <div class="indicator">
-                            <span class="indicator-item badge bg-green-700"></span>
+                            <span  class="indicator-item badge ${post?.isActive ? "bg-green-700": "bg-red-700"}"></span>
                             <div class="grid w-[72px] h-[72px] bg-base-300 place-items-center">
                                 <img src="${post?.image}" class="rounded-xl">
                             </div>
@@ -68,12 +68,13 @@ const defaultPosts = async () =>{
 }
 defaultPosts();
 
+
+// Default Dynamic latest posts
 const latestPosts = async () =>{
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
     const data = await res.json();
     const postCardsContainer = document.getElementById('post-cards-container');
     data.forEach(post => {
-        console.log(post?.author?.posted_date)
         const div = document.createElement('div');
         div.classList = `card w-full bg-white border-[1px] border-[#12132D26]`;
         div.innerHTML = `
@@ -87,7 +88,7 @@ const latestPosts = async () =>{
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                 </svg>
-                <p class="text-[#12132D99] leading-5">${post?.author?.posted_date}</p>
+                <p class="text-[#12132D99] leading-5">${post?.author?.posted_date ? post?.author?.posted_date : "No publish date"}</p>
             </div>
             <h4 class="text-[#12132D] text-lg font-extrabold leading-7 mt-2 md:mt-3">${post?.title}</h4>
             <p class="text-[#12132D99] leading-6 mt-2 md:mt-3">${post?.description}</p>
@@ -97,7 +98,7 @@ const latestPosts = async () =>{
                 </div>
                 <div>
                     <h4 class="text-[#12132D] font-bold leading-5">${post?.author?.name}</h4>
-                    <p class="text-[#12132D99] text-sm leading-4 mt-1">${post?.author?.designation}</p>
+                    <p class="text-[#12132D99] text-sm leading-4 mt-1">${post?.author?.designation ? post?.author?.designation : "Unknown"}</p>
                 </div>
             </div>
         </div>
